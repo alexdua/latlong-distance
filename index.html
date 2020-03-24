@@ -4,18 +4,27 @@
 <title></title>
 </head>
 <body onload="getDistance()">
+  <center>
+  <h3 style="padding-top: 1em">Calculate Distance Between 2 Coordinate Points</h3>
+  <h4>By Alexander Dua</h4>
+  </br>
+  <p>Please enter all coordinates in decimal degrees.</p>
+  </br>
   <p>Latitude 1, Longitude 1</p>
   <input type="text" id="lati1" value="">
+  <span>,</span>
   <input type="text" id="long1" value="">
   </br>
   <p>Latitude 2, Longitude 2</p>
   <input type="text" id="lati2" value="">
+  <span>,</span>
   <input type="text" id="long2" value="">
   </br>
   </br>
   <button onclick="getDistance()">Submit</button>
   </br>
-  <p id="demo"></p>
+  <h4 id="demo"></h4>
+  </center>
 <script>
    // Convert Degress to Radians
    function Deg2Rad( deg ) {
