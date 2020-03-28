@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+<title>Lat-Long</title>
 </head>
 <body onload="getDistance()">
   <center>
@@ -24,8 +24,18 @@
   <button onclick="getDistance()">Submit</button>
   </br>
   <h4 id="demo"></h4>
+  </br>
+  <p style="text-align:center; padding-left:300px; padding-right:300px;">This site uses the haversine formula to calculate the distance between two pairs of coordinates, both given in decimal degrees. The haversine formula is used to find the shortest between two points on a sphere, such as the Earth.</p>
+  <p>The haversine formula is as follows:</p>
+  <p>a = sin&#178;((latitude2 - latitude1) &#xF7; 2)	+ cos(latitude2) 	&times; cos(latitude1) &times; sin&#178;((longitude2 - longitude1) &#xF7; 2)</p>
+  <p>c = 2 &times; atan2(&radic;a, &radic;(1-a))</p>
+  <p>D = 6371000m &times; c</p>
+  <p style="text-align:center; padding-left:250px; padding-right:250px;">6371000m is roughly the radius of the Earth in meters. Because this is not the exact radius of the Earth, there is slight error in the calculation, however, it is still more accurate than Google Maps's measure distance tool, as itt factors in the curvature of the Earth.</p>
+  <p>The code for this site is available on Alexander Dua's github at </p><a href="https://github.com/alexdua/latlong-distance" target="_blank">https://github.com/alexdua/latlong-distance</a>
+
+
   </center>
-<script>
+  <script>
    // Convert Degress to Radians
    function Deg2Rad( deg ) {
       return deg * Math.PI / 180;
@@ -43,7 +53,7 @@
        lon2 = Deg2Rad(lo2);
        latDiff = lat2-lat1;
        lonDiff = lon2-lon1;
-       var R = 6371000; // metres
+       var R = 6371000; // meters
        var φ1 = lat1;
        var φ2 = lat2;
        var Δφ = latDiff;
@@ -55,12 +65,10 @@
        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
        var d = R * c;
-       //alert('d: ' + d);
 
        var dist = Math.acos( Math.sin(φ1)*Math.sin(φ2) + Math.cos(φ1)*Math.cos(φ2) * Math.cos(Δλ) ) * R;
-       // alert('dist: ' + dist);
        document.getElementById("demo").innerHTML = 'Distance: ' + dist + " meters";
    }
-</script>
+ </script>
 </body>
 </html>
