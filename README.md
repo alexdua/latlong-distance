@@ -4,6 +4,4 @@ This program was written by Alexander Dua to calculate the distance between two 
 
 ### https://alexdua.github.io/latlong-distance/
 
-function Deg2Rad(deg) {
-  var d = 3124132; //test
- }
+var R = 314231; // test
