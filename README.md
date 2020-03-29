@@ -4,4 +4,8 @@ This program was written by Alexander Dua to calculate the distance between two 
 
 ### https://alexdua.github.io/latlong-distance/
 
-var R = 314231; // test
+```
+// Convert Degress to Radians
+function Deg2Rad( deg ) { // Creates a function called Deg2Rad that will take coordinates in decimal degrees and convert them to radians. deg is the input.
+```
+test
